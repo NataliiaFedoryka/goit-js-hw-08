@@ -70,7 +70,7 @@ const images = [
     const galleryMarkup = images.map(({preview, original, description}) => {
         return `<li class="gallery-item"> 
         <a class="gallery-link" href="${original}">
-        <img class="gallery-image" src="${prewiew}" data-source="${original}" alt="${description}"/>
+        <img class="gallery-image" src="${preview}" data-source="${original}" alt="${description}"/>
         </a>
         </li>` ; }).join(``);
        
