@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.gallery-item {
+    flex-basis: calc(33.3333% -16px);
+}
+.galery-link{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+.galery-image {
+    display: block ;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}

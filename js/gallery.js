@@ -63,27 +63,27 @@ const images = [
         description: 'Lighthouse Coast Sea',
       },
     ];
-    const galleryMarkup = images.map(({prewiew, original, description}) => {
+
+
+
+    const galleryContainer = document.querySelector(`.gallery`);
+    const galleryMarkup = images.map(({preview, original, description}) => {
         return `<li class="gallery-item"> 
         <a class="gallery-link" href="${original}">
-        <img class="gallery-image" src="${prewiew}" data-source="${original}" alt="@description"/>
+        <img class="gallery-image" src="${prewiew}" data-source="${original}" alt="${description}"/>
         </a>
         </li>` ; }).join(``);
        
-        // тепер вставляємо в ul
-        document.addEventListener(`DOMContentLoaded`, () => {
-            const galleryContainer = document.querySelector(`.gallery`);
-            galleryContainer.innerHTML = galleryMarkup;
-        });
-        
+        galleryContainer.innerHTML = galleryMarkup;
+
+
 galleryContainer.addEventListener(`click`, (e) => {
-    e.preventDefault();
-    const target = e.target;
-    // if(e.target === curentTurget) return;
-    if(target.classlist.contains(`gallery-image`)) {
-        const largeImageUrl = target.dataset.source;
-        
-    }
-    }
-}
-)
+e.preventDefault();
+  if(e.target.nodeName !== `IMG`) {
+    return;
+  }
+  
+  
+const instance = basicLightbox.create(`<img src="${e.target.dataset.source}" width="800" height="600">`);
+instance.show();}
+);
